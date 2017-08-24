@@ -3,6 +3,7 @@
   <groupId>com.pjott</groupId>
   <artifactId>WebStore</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <name>WebStore</name>
   <packaging>war</packaging>
   <properties>
   	<maven.compiler.source>1.8</maven.compiler.source>
@@ -16,6 +17,7 @@
   			<artifactId>maven-war-plugin</artifactId>
   			<version>2.6</version>
   			<configuration>
+  				<warName>webstore</warName>
   				<failOnMissingWebXml>false</failOnMissingWebXml>
   			</configuration>
   		</plugin>
