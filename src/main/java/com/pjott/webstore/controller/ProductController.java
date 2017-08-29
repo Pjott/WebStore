@@ -13,13 +13,10 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
-	
-	@Autowired
-	private ProductRepository productRepository;
 
 	@RequestMapping("/products")
 	public String list(Model model) {		
-		model.addAttribute("products", productRepository.getAllProducts());
+		model.addAttribute("products", productService.getAllProducts());
 		
 		return "productsPage";
 	}

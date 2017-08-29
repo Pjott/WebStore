@@ -26,4 +26,15 @@ public class ProductServiceImpl implements ProductService {
 		
 	}
 
+	@Override
+	public List<Product> getAllProducts() {
+		List<Product> allProducts = productRepository.getAllProducts();
+		for(Product product : allProducts) {
+			if(product.getUnitsInStock() < 500) {
+				productRepository.updateStock(product.getProductId(), product.getUnitsInStock() + 1000);
+			}
+		}
+		return allProducts;
+	}
+
 }
