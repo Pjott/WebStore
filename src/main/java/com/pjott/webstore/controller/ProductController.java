@@ -6,25 +6,28 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.pjott.webstore.domain.repository.ProductRepository;
+import com.pjott.webstore.service.ProductService;
 
 @Controller
 public class ProductController {
 	
 	@Autowired
+	private ProductService productService;
+	
+	@Autowired
 	private ProductRepository productRepository;
 
 	@RequestMapping("/products")
-	public String list(Model model) {
-		
-	/*	Product itemOne = new Product("A34C", "Bumbulator", new BigDecimal(505));
-		itemOne.setDescription("Bumbulator z dodatkową przystawką i kalfasakiem");
-		itemOne.setCategory("WTF");
-		itemOne.setManufacturer("Odidos");
-		itemOne.setUnitsInStock(20);
-		model.addAttribute("product", itemOne); */
-		
+	public String list(Model model) {		
 		model.addAttribute("products", productRepository.getAllProducts());
 		
 		return "productsPage";
+	}
+	
+	@RequestMapping("/update/stock")
+	public String updateSrock(Model model) {
+		productService.updateAllStock();
+		
+		return "redirect:/products";
 	}
 }
