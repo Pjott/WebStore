@@ -1,6 +1,7 @@
 package com.pjott.webstore.domain.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import com.pjott.webstore.domain.Product;
 
@@ -11,4 +12,6 @@ public interface ProductRepository {
 	void updateStock(String productId, long noOfUnits);
 	
 	List<Product> getProductsByCategory(String category);
+	
+	List<Product> getProductsByFilter(Map<String, List<String>> filterParams);
 }
