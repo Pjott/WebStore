@@ -20,7 +20,7 @@
 			<div class="col-md-5">
 				<h3>${product.name}</h3>
 				<p>${product.description}</p>
-				<p><strong>Item Code: </strong><span class="label label warning">${product.productId}</span></p>
+				<p><strong>Item Code: </strong>${product.productId}</p>
 				<p><strong>manufacturer</strong>: ${product.manufacturer}</p>
 				<p><strong>category</strong>: ${product.category}</p>
 				<p><strong>Availble units in stock </strong>: ${product.unitsInStock}</p>
