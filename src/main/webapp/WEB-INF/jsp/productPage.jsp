@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,9 +23,12 @@
 				<p><strong>Item Code: </strong>${product.productId}</p>
 				<p><strong>manufacturer</strong>: ${product.manufacturer}</p>
 				<p><strong>category</strong>: ${product.category}</p>
-				<p><strong>Availble units in stock </strong>: ${product.unitsInStock}</p>
+				<p><strong>Available units in stock </strong>: ${product.unitsInStock}</p>
 				<h4>${product.unitPrice} EUR</h4>
 				<p>
+					<a href="<spring:url value="/market/products" />" class="btn btn-default">
+						<span class="glyphicon-hand-left glyphicon"></span> Back
+					</a>
 					<a href="#" class="btn btn-warning btn-large">
 						<span class="glyphicon-shopping-cart glyphicon"></span> Order Now
 					</a>
