@@ -1,5 +1,6 @@
 package com.pjott.webstore.service.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
@@ -45,4 +46,23 @@ public class ProductServiceImpl implements ProductService {
 	public Product getProductById(String productId) {
 		return productRepository.getProductById(productId);
 	}
+
+	@Override
+	public Product getProductByBrands(String manufacturer) {
+		return productRepository.getProductByBrands(manufacturer);
+	}
+
+	@Override
+	public List<Product> getProductsByPriceRange(Map<String, List<BigDecimal>> priceRange) {
+		return productRepository.getProductsByPriceRange(priceRange);
+	}
+
+	/*@Override
+	public List<Product> getProductsByPriceAndBrandFilter(Map<String, List<String>> priceAndBrandFilterParams) {
+		return productRepository.getProductsByPriceAndBrandFilter(priceAndBrandFilterParams);
+	}*/
+	
+	
+	
+	
 }

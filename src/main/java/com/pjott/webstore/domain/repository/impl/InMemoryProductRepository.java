@@ -1,5 +1,6 @@
 package com.pjott.webstore.domain.repository.impl;
 
+import java.math.BigDecimal;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.MatrixVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pjott.webstore.domain.Product;
 import com.pjott.webstore.domain.repository.ProductRepository;
@@ -78,6 +81,32 @@ public class InMemoryProductRepository implements ProductRepository {
 		params.put("id", productId);
 		return jdbcTemplate.queryForObject(SQL, params, new ProductMapper());
 	}
-	
+/*
+	@Override
+	public List<Product> getProductsByPriceAndBrandFilter(Map<String, List<String>> priceAndBrandFilterParams) {
+		String SQL = "SELECT * FROM PRODUCTS WHERE (UNIT_PRICE BETWEEN (:low) AND (:high)) AND (MANUFACTURER IN (:brands))";
+		/* TODO
+		 * Rozbić na dwie osobne metody:
+		 * A) getProductsByPrice -> w ProductController będzie to jako @MatrixVariable, a jdbcTemplate.query
+		 * B) getProductByBrand -> w ProductController będzie to jako @RequestParam, a jdbcTemplate.queryForObject
+		 * Powinno być OK
+		 */
+	//	return jdbcTemplate.query(SQL, priceAndBrandFilterParams, new ProductMapper());
+	//}
+
+	@Override
+	public Product getProductByBrands(String manufacturer) {
+		String SQL = "SELECT * FROM PRODUCTS WHERE MANUFACTURER = :brands";
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("brands", manufacturer);
+		return jdbcTemplate.queryForObject(SQL, params, new ProductMapper());
+	}
+
+	@Override
+	public List<Product> getProductsByPriceRange(Map<String, List<BigDecimal>> priceRange) {
+		String SQL = "SELECT * FROM PRODUCTS WHERE UNIT_PRICE BETWEEN (:low) AND (:high)";
+		//TODO Naprawić metodę (in future)
+		return jdbcTemplate.query(SQL, priceRange, new ProductMapper());
+	}
 	
 }
