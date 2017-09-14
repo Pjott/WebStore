@@ -23,4 +23,6 @@ public interface ProductService {
 	List<Product> getProductsByPriceRange(Map<String, List<BigDecimal>> priceRange);
 	
 	Product getProductByBrands(String manufacturer);
+	
+	void addProduct(Product product);
 }
