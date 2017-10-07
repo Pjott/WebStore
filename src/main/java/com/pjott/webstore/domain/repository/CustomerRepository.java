@@ -7,4 +7,6 @@ import com.pjott.webstore.domain.Customer;
 public interface CustomerRepository {
 
 	List<Customer> getAllCustomers();
+	
+	void addCustomer(Customer customer);
 }
