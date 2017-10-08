@@ -35,6 +35,6 @@ public class CustomerContoller {
 	public String processAddNewCustomerForm(@ModelAttribute("newCustomer") Customer newCustomer) {
 		customerService.addCustomer(newCustomer);
 		
-		return "redirect:/customers/add";
+		return "redirect:/customers";
 	}
 }
