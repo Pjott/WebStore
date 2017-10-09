@@ -65,14 +65,7 @@
 							<form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
 						</div>
 					</div>
-					
-					<div class="row">
-						<lable class="control-label col-lg-2" for="unitsInOrder">units in order</lable>
-						<div class="col-lg-10">
-							<form:input id="unitsInOrder" path="unitsInOrder" type="text" class="form:input-large"/>
-						</div>
-					</div>
-				</div>
+
 				
 				<div class="form-group">
 					<lable class="control-label col-lg-2" for="description">description</lable>
@@ -80,13 +73,7 @@
 						<form:textarea id="description" path="description" rows="2" style="margin-left: -10px"/>
 					</div>
 				</div>
-				
-				<div class="form-group">
-					<lable class="control-label col-lg-2" for="discontinued">discontinued</lable>
-					<div class="col-lg-10">
-						<form:checkbox id="discontinued" path="discontinued"/>
-					</div>
-				</div>
+
 				
 				<div class="form-group">
 					<lable class="control-label col-lg-2" for="condition">condition</lable>
