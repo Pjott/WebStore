@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,42 +26,42 @@
 				<div class="form-group">
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="productId">Product Id</lable>
+						<lable class="control-label col-lg-2" for="productId"> <spring:message code="addProductPage.form.productId.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="productId" path="productId" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="name">name</lable>
+						<lable class="control-label col-lg-2" for="name"> <spring:message code="addProductPage.form.name.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="name" path="name" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="unitPrice">unit price</lable>
+						<lable class="control-label col-lg-2" for="unitPrice"> <spring:message code="addProductPage.form.unitPrice.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="unitPrice" path="unitPrice" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="manufacturer">manufacturer</lable>
+						<lable class="control-label col-lg-2" for="manufacturer"> <spring:message code="addProductPage.form.manufacturer.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="category">category</lable>
+						<lable class="control-label col-lg-2" for="category"> <spring:message code="addProductPage.form.category.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="category" path="category" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="unitsInStock">units in stock</lable>
+						<lable class="control-label col-lg-2" for="unitsInStock"> <spring:message code="addProductPage.form.unitsInStock.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
 						</div>
@@ -68,7 +69,7 @@
 
 				
 				<div class="form-group">
-					<lable class="control-label col-lg-2" for="description">description</lable>
+					<lable class="control-label col-lg-2" for="description"> <spring:message code="addProductPage.form.description.label" /> </lable>
 					<div class="col-lg-10">
 						<form:textarea id="description" path="description" rows="2" style="margin-left: -10px"/>
 					</div>
@@ -76,11 +77,11 @@
 
 				
 				<div class="form-group">
-					<lable class="control-label col-lg-2" for="condition">condition</lable>
+					<lable class="control-label col-lg-2" for="condition"> <spring:message code="addProductPage.form.condition.label" /> </lable>
 					<div class="col-lg-10" >
-						<form:radiobutton value="New" path="condition" />New	
-						<form:radiobutton value="Old" path="condition"/>Old		
-						<form:radiobutton value="Refurbished" path="condition"/>Refurbished
+						<form:radiobutton value="New" path="condition" /> <spring:message code="addProductPage.form.New.div" /> 	
+						<form:radiobutton value="Old" path="condition"/> <spring:message code="addProductPage.form.Old.div" /> 		
+						<form:radiobutton value="Refurbished" path="condition"/> <spring:message code="addProductPage.form.Refurbished.div" /> 
 							
 					</div>
 				</div>

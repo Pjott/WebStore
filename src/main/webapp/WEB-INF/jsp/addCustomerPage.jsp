@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,28 +26,28 @@
 				<div class="form-group">
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="customerId">customer Id</lable>
+						<lable class="control-label col-lg-2" for="customerId"> <spring:message code="addCustomerPage.form.customerId.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="customerId" path="customerId" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="name">name</lable>
+						<lable class="control-label col-lg-2" for="name"> <spring:message code="addCustomerPage.form.name.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="name" path="name" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="address">address</lable>
+						<lable class="control-label col-lg-2" for="address"> <spring:message code="addCustomerPage.form.address.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="address" path="address" type="text" class="form:input-large"/>
 						</div>
 					</div>
 					
 					<div class="row">
-						<lable class="control-label col-lg-2" for="noOfOrdersMade">number of orders made</lable>
+						<lable class="control-label col-lg-2" for="noOfOrdersMade"> <spring:message code="addCustomerPage.form.noOfOrdersMade.label" /> </lable>
 						<div class="col-lg-10">
 							<form:input id="noOfOrdersMade" path="noOfOrdersMade" type="text" class="form:input-large"/>
 						</div>
