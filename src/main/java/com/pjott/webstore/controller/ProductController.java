@@ -98,12 +98,21 @@ public class ProductController {
 		}
 
 		MultipartFile productImage = newProduct.getProductImage();
+		MultipartFile productManual = newProduct.getProductManual();
 		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 		if(productImage != null && !productImage.isEmpty()) {
 			try {
 				productImage.transferTo(new File(rootDirectory + "resources\\images" + newProduct.getProductId() + ".png"));
 			} catch (Exception e) {
 				throw new RuntimeException("Product Image saving failed", e);
+			}
+		}
+		
+		if(productManual != null && !productManual.isEmpty()) {
+			try {
+				productManual.transferTo(new File(rootDirectory + "resources\\manuals" + newProduct.getProductId() + ".pdf"));
+			} catch (Exception e) {
+				throw new RuntimeException("Product Manual saving failed", e);
 			}
 		}
 		
@@ -114,6 +123,6 @@ public class ProductController {
 	
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder) {
-		binder.setAllowedFields("productId", "name", "unitPrice", "description", "manufacturer", "category", "unitsInStock", "condition", "productImage");
+		binder.setAllowedFields("productId", "name", "unitPrice", "description", "manufacturer", "category", "unitsInStock", "condition", "productImage", "productManual");
 	}
 }
